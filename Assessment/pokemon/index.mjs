@@ -1,9 +1,9 @@
 export function Pokemon (name,type,attacks) { // TODO: full up constructor args
   // TODO: fill up constructor
   
-  this._name = name;
+this._name = name;
 this._type = type;
-    this._attacks = attacks;
+this._attacks = attacks;
   }
 
 export const TYPE_FIRE = 'fire'
@@ -59,26 +59,40 @@ Pokemon.prototype.getAttackDamageWrtType = function (receiverPokemon) {
   const attackerStrongAgainstType = Pokemon.TYPE_ADVANTAGE_MAPPING[attackerType]
   const receiverStrongAgainstType = Pokemon.TYPE_ADVANTAGE_MAPPING[receiverType]
 
-  if (attackerStrongAgainstType !== receiverType) {
-    return 190
-  } else if (receiverStrongAgainstType === attackerType) {
-    return 50
-  } else {
-    return 220
-  }
-}
 
 
+if (attackerStrongAgainstType !== receiverType && receiverStrongAgainstType !== attackerType) {
+  return 100              //When fire attacks fire, 100 damage
+} else if (receiverStrongAgainstType === attackerType) {
+  return 50            // When grass attacks fire, 50 damage
+} else {
+  return 150  //When fire attacks grass, 150 damage
+}}
 // // strong : weak
 // [TYPE_FIRE]: TYPE_GRASS,
 // [TYPE_WATER]: TYPE_FIRE,
 // [TYPE_GRASS]: TYPE_WATER
-//const pokemon1 = new Pokemon('name','type','attack')
+
+//const pokemon1 = new Pokemon (name,type,attacks)
 //Pokemon (name,type,attacks)
-const pokemon1 = new Pokemon('pickachu','fire',"attack1");
-const pokemon2 = new Pokemon('name1','fire','attack_P2');
+export const pokemon1 = new Pokemon('pickachuA','fire',"Special_1");
+export const pokemon1a = new Pokemon('pickachuB','fire',"Special_1a");
+
+export const pokemon2 = new Pokemon('Arcanine','grass','Special_2');
+export const pokemon3 = new Pokemon('Mega Drain','grass',"Physical");
+
+export const pokemon4 = new Pokemon('Mega Drain','water',"Physical_2");
+
+export const pokemon5 = new Pokemon('Mega Drain','cloud_type',"Cloud_attack");
 
 
-//attack(attackName, receiverPokemon) 
-console.log(pokemon2.attack('attack_P2','pickachu'));
-console.log(pokemon1.getAttackDamageWrtType('name1'));
+console.log(pokemon4.getAttackDamageWrtType(pokemon5));
+
+
+
+
+
+
+
+
+
