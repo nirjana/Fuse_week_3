@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "lodash.clamp": "^4.0.3",
+    "lodash.flatmapdeep": "^4.10.0",
+    "lodash.inrange": "^3.3.6",
+    "lodash.map": "^4.6.0",
+    "lodash.zip": "^4.2.0"
+  }
+}
